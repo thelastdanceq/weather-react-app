@@ -4,9 +4,9 @@ import Forecast from './Forecast'
 
 export default function ManPanel() {
   return (
-    <div>
+    <div className='main-panel'>
       <TodayBlock />
-      <Forecast/>
+      <Forecast />
     </div>
   )
 }

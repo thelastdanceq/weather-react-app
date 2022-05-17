@@ -14,17 +14,18 @@ body {
 }
 
 .container {
+  /* width:; */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 .today {
   display: flex;
   flex-direction: column;
-  width: calc(1440px - 576px);
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -67,6 +68,14 @@ body {
   justify-content: space-around;
 }
 
+.date {
+  font-size: 32px;
+}
+
+.time {
+  font-size: 24px;
+}
+
 .card {
   border: 0.1px solid white;
   border-radius: 10px;
@@ -80,4 +89,77 @@ body {
 
 .forecast {
   margin-top: 25px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.text-p {
+  font-size: 28px;
+}
+
+.main-panel {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 30px;
+  background-color: pink;
+  border: none;
+}
+
+.search-input::placeholder {
+  color: aliceblue;
+  text-align: center;
+}
+
+.search-input:focus {
+  background-color: pink;
+  border: none;
+  outline: none;
+}
+
+.hours {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 0 160px 0;
+  border-bottom: 2px solid aliceblue;
+}
+
+@media screen and (min-width : 768px) {
+  .hours {
+    padding: 0 0 30px 0;
+  }
+}
+
+.sunrise-clocks,
+.sunset-clocks {
+  border-radius: 30px;
+  background: rgb(255, 255, 255, 0.2);
+  padding: 10px;
+}
+
+.quality {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+progress {
+  height: 50px;
+}
+
+br {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 2px;
+  line-height: 2px;
+  color: aliceblue;
 }

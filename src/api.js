@@ -1,4 +1,4 @@
-const BASE_URL = "http://api.weatherapi.com/v1";
+const BASE_URL = "https://api.weatherapi.com/v1";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -22,7 +22,7 @@ export const getAstroData = async () => {
 }
 
 export const getDataOfQuality = async () => {
-    const response = await fetch(`${BASE_URL}/current.json?key=${API_KEY}&q=48.519457, 25.031747&aqi=yes`, {
+    const response = await fetch(`${BASE_URL}/current.json?key=${API_KEY}&q=48.519457,25.031747&aqi=yes`, {
         mode: "cors",
     });
     return response.json();

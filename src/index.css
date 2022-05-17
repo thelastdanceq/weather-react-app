@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: pink;
+  color: aliceblue;
 }
 
 * {
@@ -14,13 +16,15 @@ body {
 .container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .today {
   display: flex;
   flex-direction: column;
   width: calc(1440px - 576px);
-  background-color: pink;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -49,9 +53,31 @@ body {
 }
 
 .humidity {
-  border-left: 3px solid white;
+  border-left: 1px solid white;
+  height: fit-content;
 }
 
 .rain-percents {
-  border-left: 3px solid white;
+  border-left: 1px solid white;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.card {
+  border: 0.1px solid white;
+  border-radius: 10px;
+  background: rgb(255, 255, 255, 0.2);
+  padding: 10px;
+}
+
+.card p {
+  margin: 0;
+}
+
+.forecast {
+  margin-top: 25px;
 }

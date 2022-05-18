@@ -14,6 +14,8 @@ export default function TodayBlock() {
         });
     }, [contextCity.search])
 
+    console.log(location);
+
     return (
         !Object.keys(currentWeather).length > 0 ? <h1>Loading...</h1> :
             <div className='today'>
@@ -22,6 +24,7 @@ export default function TodayBlock() {
                     alt={currentWeather.condition.text}
                     width="128px"
                     height="128px" />
+                <p className="location">{location.name}, {location.country}</p>
                 <p className='temp'>{currentWeather.temp_c}<sup>&deg;C</sup></p>
                 <p className='date'>{Date(location.localtime_epoch).split(' ').slice(1, 4).join(' ')}</p>
                 <p className="time">{Date(location.localtime_epoch).split(' ')[0] + ' ' + Date(location.localtime_epoch).split(' ')[4]}</p>

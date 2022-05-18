@@ -137,6 +137,9 @@ body {
   border-bottom: 2px solid aliceblue;
 }
 
+.location {
+  font-size: 35px;
+}
 
 
 .sunrise-clocks,

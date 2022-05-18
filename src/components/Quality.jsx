@@ -1,14 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { getDataOfQuality } from '../api'
 import { getQualityOfAir, getQualityOfDefra } from '../helpful'
+import { context } from '../context'
 
 export default function Quality() {
   const [quality, setQuality] = useState({})
+
+  const contextCity = useContext(context)
+
+
   useEffect(() => {
-    getDataOfQuality().then(data => {
+    getDataOfQuality(contextCity.search).then(data => {
       setQuality(data.current.air_quality)
     })
-  }, [])
+  }, [contextCity.search])
   return (
     <div className='quality'>
       <div className="air-qual">

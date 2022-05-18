@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { getDailyData } from '../api'
+import { context } from '../context'
 
 
 export default function TodayBlock() {
     const [location, setLocation] = useState({})
     const [currentWeather, setCurrentWeather] = useState({})
-
+    const contextCity = useContext(context);
     useEffect(() => {
-        getDailyData().then(data => {
+        getDailyData(contextCity.search).then(data => {
             setLocation(data.location);
             setCurrentWeather(data.current);
         });
-    }, [])
+    }, [contextCity.search])
 
     return (
         !Object.keys(currentWeather).length > 0 ? <h1>Loading...</h1> :

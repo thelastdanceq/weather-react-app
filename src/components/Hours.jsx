@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { getAstroData } from "../api"
+import { context } from '../context'
 export default function Hours() {
     const [astro, setAstro] = useState({})
+    const contextCity = useContext(context);
     useEffect(() => {
-        getAstroData().then(data => setAstro(data.astronomy.astro));
-    }, [])
+        getAstroData(contextCity.search).then(data => setAstro(data.astronomy.astro));
+    }, [contextCity.search])
     return (
         astro.length === 0 ? <h1>loading</h1> :
             <div className='hours' >

@@ -1,7 +1,14 @@
 import Main from "./components/Main"
+import { context } from './context';
+import { useLocalStorage } from "./hooks/useLocalStorage";
+
 function App() {
+  const [search, setSearch] = useLocalStorage('London', 'city')
   return (
-    <Main />
+    <context.Provider value={{ search, setSearch }}>
+      <Main />
+    </context.Provider>
+
   );
 }
 

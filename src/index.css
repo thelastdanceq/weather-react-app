@@ -186,4 +186,14 @@ br {
   .card {
     margin: 20px;
   }
+
+  .stats {
+    flex-direction: column;
+  }
+
+  .wind,
+  .humidity,
+  .rain-percents {
+    border: none;
+  }
 }

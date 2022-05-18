@@ -14,7 +14,6 @@ export default function TodayBlock() {
         });
     }, [contextCity.search])
 
-    console.log(location);
 
     return (
         !Object.keys(currentWeather).length > 0 ? <h1>Loading...</h1> :

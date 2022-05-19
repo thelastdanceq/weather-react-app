@@ -8,11 +8,12 @@ export default function Hours() {
         getAstroData(contextCity.search).then(data => {
             if ("error" in data) {
                 setAstro({});
+                contextCity.setSearch("Kiev")
             } else {
                 setAstro(data.astronomy.astro);
             }
         });
-    }, [contextCity.search])
+    }, [contextCity])
     return (
         astro.length === 0 ? <h1>loading</h1> :
             <div className='hours' >

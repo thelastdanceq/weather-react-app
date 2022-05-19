@@ -10,6 +10,7 @@ export default function TodayBlock() {
     useEffect(() => {
         getDailyData(contextCity.search).then(data => {
             if ("error" in data) {
+                contextCity.setSearch("Kiev")
                 setLocation({});
                 setCurrentWeather({});
             } else {
@@ -17,7 +18,7 @@ export default function TodayBlock() {
                 setCurrentWeather(data.current);
             }
         });
-    }, [contextCity.search, contextCity.nowTime])
+    }, [contextCity])
     return (
         !Object?.keys(currentWeather).length > 0 ? <h1>Loading...</h1> :
             <div className='today'>

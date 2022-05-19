@@ -16,6 +16,7 @@ export default function Search() {
         onKeyDown={(e) => {
           if (e.code === "Enter") {
             contextCity.setSearch(e.target.value);
+            setvalue('')
           };
         }}
         className='search-input'

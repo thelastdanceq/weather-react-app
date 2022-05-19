@@ -13,11 +13,12 @@ export default function Quality() {
     getDataOfQuality(contextCity.search).then(data => {
       if ("error" in data) {
         setQuality({})
+        contextCity.setSearch("Kiev")
       } else {
         setQuality(data.current.air_quality)
       }
     })
-  }, [contextCity.search])
+  }, [contextCity])
   return (
     <div className='quality'>
       <div className="air-qual">

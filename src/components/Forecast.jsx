@@ -23,14 +23,15 @@ export default function Forecast() {
         ]
         ).then(data => {
             if ("error" in data[0]) {
-                setdays([])
+                setdays([]);
+                contextCity.setSearch("Kiev");
             } else {
                 setdays(data.map(item => {
                     return item?.forecast?.forecastday[0];
                 }))
             }
         })
-    }, [now, contextCity.search])
+    }, [now, contextCity])
 
     return (
         days.length === 0 ? <h1>Loading..</h1> : <DaysList days={days} />

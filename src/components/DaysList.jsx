@@ -6,7 +6,7 @@ export default function DaysList({ days }) {
         <div className="forecast days list">
             {
                 days.map(day => {
-                    return <DaysItem key={day.date_epoch} day={day} />
+                    return <DaysItem key={day?.date_epoch} day={day} />
                 })
             }
         </div>

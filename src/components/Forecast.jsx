@@ -21,12 +21,18 @@ export default function Forecast() {
             getData(now.getFullYear(), now.getMonth() + 1, now.getDate() + 5, contextCity.search),
             getData(now.getFullYear(), now.getMonth() + 1, now.getDate() + 6, contextCity.search)
         ]
-        ).then(data => setdays(data.map(item => {
-            return item.forecast.forecastday[0];
-        })))
+        ).then(data => {
+            if ("error" in data[0]) {
+                setdays([])
+            } else {
+                setdays(data.map(item => {
+                    return item?.forecast?.forecastday[0];
+                }))
+            }
+        })
     }, [now, contextCity.search])
 
     return (
-        !days.length ? <h1>Loading..</h1> : <DaysList days={days} />
+        days.length === 0 ? <h1>Loading..</h1> : <DaysList days={days} />
     )
 }

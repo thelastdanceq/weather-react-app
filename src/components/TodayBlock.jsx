@@ -9,24 +9,27 @@ export default function TodayBlock() {
     const contextCity = useContext(context);
     useEffect(() => {
         getDailyData(contextCity.search).then(data => {
-            setLocation(data.location);
-            setCurrentWeather(data.current);
+            if ("error" in data) {
+                setLocation({});
+                setCurrentWeather({});
+            } else {
+                setLocation(data.location);
+                setCurrentWeather(data.current);
+            }
         });
-    }, [contextCity.search])
-
-
+    }, [contextCity.search, contextCity.nowTime])
     return (
-        !Object.keys(currentWeather).length > 0 ? <h1>Loading...</h1> :
+        !Object?.keys(currentWeather).length > 0 ? <h1>Loading...</h1> :
             <div className='today'>
                 <img
-                    src={currentWeather.condition.icon}
-                    alt={currentWeather.condition.text}
+                    src={currentWeather?.condition?.icon}
+                    alt={currentWeather?.condition?.text}
                     width="128px"
                     height="128px" />
-                <p className="location">{location.name}, {location.country}</p>
-                <p className='temp'>{currentWeather.temp_c}<sup>&deg;C</sup></p>
-                <p className='date'>{Date(location.localtime_epoch).split(' ').slice(1, 4).join(' ')}</p>
-                <p className="time">{Date(location.localtime_epoch).split(' ')[0] + ' ' + Date(location.localtime_epoch).split(' ')[4]}</p>
+                <p className="location">{location?.name}, {location?.country}</p>
+                <p className='temp'>{currentWeather?.temp_c}<sup>&deg;C</sup></p>
+                <p className='date'>{Date(location?.localtime_epoch).split(' ').slice(1, 4).join(' ')}</p>
+                <p className="time">{contextCity?.nowTime.split(' ')[0] + ' ' + contextCity?.nowTime.split(' ')[4].split(':').slice(0, 2).join(":")}</p>
                 <div className="stats">
                     <div className="wind">
                         <p>Wind</p>

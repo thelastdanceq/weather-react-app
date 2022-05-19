@@ -11,7 +11,11 @@ export default function Quality() {
 
   useEffect(() => {
     getDataOfQuality(contextCity.search).then(data => {
-      setQuality(data.current.air_quality)
+      if ("error" in data) {
+        setQuality({})
+      } else {
+        setQuality(data.current.air_quality)
+      }
     })
   }, [contextCity.search])
   return (

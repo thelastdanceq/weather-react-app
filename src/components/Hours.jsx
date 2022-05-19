@@ -5,7 +5,13 @@ export default function Hours() {
     const [astro, setAstro] = useState({})
     const contextCity = useContext(context);
     useEffect(() => {
-        getAstroData(contextCity.search).then(data => setAstro(data.astronomy.astro));
+        getAstroData(contextCity.search).then(data => {
+            if ("error" in data) {
+                setAstro({});
+            } else {
+                setAstro(data.astronomy.astro);
+            }
+        });
     }, [contextCity.search])
     return (
         astro.length === 0 ? <h1>loading</h1> :

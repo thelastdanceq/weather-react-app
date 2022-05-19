@@ -168,6 +168,10 @@ br {
   color: aliceblue;
 }
 
+.side {
+  padding-top: 50px;
+}
+
 
 @media screen and (min-width : 320px) and (max-width: 1024px) {
   .temp {

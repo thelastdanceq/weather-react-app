@@ -10,10 +10,10 @@ export default function TodayBlock() {
     useEffect(() => {
         getDailyData(contextCity.search).then(data => {
             if ("error" in data) {
-                contextCity.setSearch("Kiev")
                 setLocation({});
                 setCurrentWeather({});
             } else {
+                contextCity.setSearch(data.location.name)
                 setLocation(data.location);
                 setCurrentWeather(data.current);
             }

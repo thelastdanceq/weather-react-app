@@ -13,8 +13,8 @@ export default function Quality() {
     getDataOfQuality(contextCity.search).then(data => {
       if ("error" in data) {
         setQuality({})
-        contextCity.setSearch("Kiev")
       } else {
+        contextCity.setSearch(data.location.name)
         setQuality(data.current.air_quality)
       }
     })

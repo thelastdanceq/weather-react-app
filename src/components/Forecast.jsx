@@ -24,8 +24,8 @@ export default function Forecast() {
         ).then(data => {
             if ("error" in data[0]) {
                 setdays([]);
-                contextCity.setSearch("Kiev");
             } else {
+                contextCity.setSearch(data[0].location.name)
                 setdays(data.map(item => {
                     return item?.forecast?.forecastday[0];
                 }))

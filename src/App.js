@@ -4,7 +4,7 @@ import { context } from './context';
 import { useLocalStorage } from "./hooks/useLocalStorage";
 
 function App() {
-  const [search, setSearch] = useLocalStorage('London', 'city');
+  const [search, setSearch] = useLocalStorage('Kiev', 'city');
   const [nowTime, setNowTime] = useState(Date());
 
   let ref = useRef(null);

@@ -175,6 +175,10 @@ br {
 
 
 @media screen and (min-width : 320px) and (max-width: 1024px) {
+  .main-panel {
+    width: 85vw;
+  }
+
   .temp {
     font-size: 100px;
   }

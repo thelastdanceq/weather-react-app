@@ -6,6 +6,7 @@ export const getDailyData = async (q) => {
         const response = await fetch(`${BASE_URL}/current.json?key=${API_KEY}&q=${q}`, {
             mode: "cors",
         })
+
         if (response.status === 400) {
             throw new Error();
         };

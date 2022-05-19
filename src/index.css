@@ -113,9 +113,9 @@ body {
 
 .search-input {
   width: 100%;
+  background-color: transparent;
   box-sizing: border-box;
   font-size: 30px;
-  background-color: linear-gradient(to right, #F6EFD2, #CEAD78);
   border: none;
 }
 

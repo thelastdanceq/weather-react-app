@@ -20,7 +20,7 @@ export default function TodayBlock() {
         });
     }, [contextCity])
     return (
-        !Object?.keys(currentWeather).length > 0 ? <h1>Loading...</h1> :
+        !Object?.keys(currentWeather).length > 0 ? null :
             <div className='today'>
                 <img
                     src={currentWeather?.condition?.icon}

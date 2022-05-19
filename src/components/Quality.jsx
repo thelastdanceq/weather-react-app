@@ -20,7 +20,7 @@ export default function Quality() {
     })
   }, [contextCity])
   return (
-    <div className='quality'>
+    Object.keys(quality).length === 0 ? null : <div className='quality'>
       <div className="air-qual">
         <p className='text-p'>Air quaility</p>
         <progress min='1' max='5' value={quality["us-epa-index"]}>{ }</progress>

@@ -34,6 +34,6 @@ export default function Forecast() {
     }, [now, contextCity])
 
     return (
-        days.length === 0 ? <h1>Loading..</h1> : <DaysList days={days} />
+        days.length === 0 ? null : <DaysList days={days} />
     )
 }

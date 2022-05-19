@@ -15,7 +15,7 @@ export default function Hours() {
         });
     }, [contextCity])
     return (
-        astro.length === 0 ? <h1>loading</h1> :
+        astro.length === 0 ? null :
             <div className='hours' >
                 <div className='sunrise'>
                     <p className='text-p' >Sunrise</p>

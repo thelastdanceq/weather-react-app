@@ -14,7 +14,8 @@ export default function Search() {
           setvalue(e.target.value)
         }}
         onKeyDown={(e) => {
-          if (e.code === "Enter") {
+          if (e.keyCode === 13) {
+            window.scroll(0, 0)
             contextCity.setSearch(e.target.value);
             setvalue('')
           };

@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: pink;
+  background: linear-gradient(45deg, #48355B, #91BEF3);
   color: aliceblue;
 }
 
@@ -115,17 +115,17 @@ body {
   width: 100%;
   box-sizing: border-box;
   font-size: 30px;
-  background-color: pink;
+  background-color: linear-gradient(to right, #F6EFD2, #CEAD78);
   border: none;
 }
 
 .search-input::placeholder {
-  color: aliceblue;
+  color: #48355B;
   text-align: center;
 }
 
 .search-input:focus {
-  background-color: pink;
+  background-color: #91BEF3;
   border: none;
   outline: none;
 }
